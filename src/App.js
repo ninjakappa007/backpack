@@ -18,7 +18,8 @@ function App() {
   return (
 
     <div className='App bg-[#18181b] w-[100vw] h-full mx-auto'>
-            <Navbar isLogIn={isLogIn} setIsLog={setIsLogIn}></Navbar>
+        <div className='max-w-[1800px] mx-auto'>
+        <Navbar isLogIn={isLogIn} setIsLog={setIsLogIn}></Navbar>
             <Routes>
               <Route path="/" element={<Home setIsLogIn={setIsLogIn}></Home>}/>
               <Route path="/login" element={<Login setIsLogIn={setIsLogIn}></Login>}/>
@@ -34,6 +35,7 @@ function App() {
             </div>
             
             <Toaster />
+        </div>
     </div>
   );
 }

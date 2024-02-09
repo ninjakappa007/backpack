@@ -5,7 +5,7 @@ import { MdBackpack } from "react-icons/md";
 
 const Navbar = (props) => {
   return (
-    <div className='flex justify-around gap-[29rem] pt-4'>
+    <div className='flex justify-between  pt-4 max-w-[1300px] mx-auto'>
         {/* logo */}
         <div className='flex'>
         <Link to="/" className='flex'>
@@ -19,9 +19,6 @@ const Navbar = (props) => {
             <Link to="/exchange">
                 <button>Exchange</button>
             </Link>
-            {/* <Link to="/login">
-                <button>Login</button>
-            </Link> */}
             {!props.isLogIn && <Link to="/login">
                 <button>Login</button>
             </Link>}

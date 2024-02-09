@@ -14,10 +14,10 @@ import toast, { Toaster } from 'react-hot-toast';
 const Home = (props) => {
   console.log(cardsdata)
   props.setIsLogIn(false);
-  const notify = () => toast('Thanks for subscribing');
+  const notify = () => toast('Thanks for Sub');
   return (
 
-    <div className='w-9/12 mx-auto pt-10'>
+    <div className='w-[1200px] mx-auto pt-10 max-w-[1800px]'>
       <h2 className='text-left text-2xl text-white font-semibold'>News</h2>
       <div className='grid grid-rows-3 grid-cols-2 gap-20 py-6'>
       {/* cards */}
@@ -97,7 +97,7 @@ const Home = (props) => {
 
       </div>
       
-    <div className='w-[105%] pt-28'>
+    <div className='w-[100%] pt-28 mx-auto'>
       <div className='ml-22 pt-10 bg-[#0d9488] h-48 rounded-lg flex justify-around'>
           <div className='flex flex-col gap-3'>
               <p className='text-3xl font-bold text-white'>
