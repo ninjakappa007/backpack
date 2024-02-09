@@ -25,7 +25,9 @@ const Navbar = (props) => {
             {!props.isLogIn && <Link to="/login">
                 <button>Login</button>
             </Link>}
-            {props.isLogIn && <button>Sign up</button>}
+            {props.isLogIn && <Link to="/signup">
+                <button>Sign up</button>
+            </Link>}
         </div>
     </div>
   )

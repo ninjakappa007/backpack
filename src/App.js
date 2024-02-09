@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar"
 import { GrLinkedin } from "react-icons/gr";
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import Signup from './pages/Signup';
+import PageNotFound from './pages/PageNotFound';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
               <Route path="/" element={<Home setIsLogIn={setIsLogIn}></Home>}/>
               <Route path="/login" element={<Login setIsLogIn={setIsLogIn}></Login>}/>
               <Route path='/exchange' element={<Exchange></Exchange>}/>
+              <Route path='/signup' element={<Signup></Signup>}/>
+              <Route path='/*' element={<PageNotFound></PageNotFound>}/>
             </Routes>
             <div className='h-[100px] flex justify-end items-end'>
               <div className='mb-2 mr-4 text-4xl text-slate-200'>
