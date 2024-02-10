@@ -41,12 +41,12 @@ const Login = (props) => {
           
           <div className='flex justify-between'>
             <div className='flex gap-1'>
-              <p className='text-white '>New here ?</p>
-              <a className='text-blue-600' href=''>Sign up</a>
+              <p className='text-white text-sm'>New here ?</p>
+              <a className='text-blue-600 text-sm' href=''>Sign up</a>
             </div>
 
             <div>
-              <a className='text-blue-600' href=''>Forgot Password</a>
+              <a className='text-blue-600 text-sm' href=''>Forgot Password</a>
             </div>
           </div>
           <button type='submit' className='w-[full] h-[40px] bg-white rounded-lg font-semibold'>Login</button>
