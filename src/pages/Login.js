@@ -31,12 +31,12 @@ const Login = (props) => {
 
           <div>
             <input className='bg-[#18181b] w-[100%] p-2 rounded-lg border border-slate-600 text-white' required onChange={Event=>changeHandler(Event)}
-             placeholder='Email' name="email" type='email'></input>
+             placeholder='Email' name="email" type='email' value={formData.email}></input>
           </div>
 
           <div>
             <input className='bg-[#18181b] w-[100%] p-2 rounded-lg border border-slate-600 text-white' required onChange={Event=>changeHandler(Event)}
-             placeholder='Password' name='password' type='text'></input>
+             placeholder='Password' name='password' type='text' value={formData.password}></input>
           </div>
           
           <div className='flex justify-between'>
