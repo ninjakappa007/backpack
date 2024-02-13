@@ -12,10 +12,11 @@ import { AppContext } from '../context/AppContext'
 
 const Home = () => {
 
-  const {setIsHome } = useContext(AppContext);
+  const {setIsHome,setIsLoginPage } = useContext(AppContext);
 
   useEffect(()=>{
     setIsHome(true);
+    setIsLoginPage(false);
   })
   return (
 
