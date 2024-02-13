@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MdBackpack } from "react-icons/md";
+import { AppContext } from '../context/AppContext';
 
 
-const Navbar = (props) => {
+const Navbar = () => {
+
+const {isLoginPage,isHome} = useContext(AppContext);
+
   return (
     <div className='flex justify-between  pt-4 max-w-[1300px] mx-auto'>
         {/* logo */}
@@ -16,15 +20,25 @@ const Navbar = (props) => {
         
         {/* buttons */}
         <div className='flex gap-8 text-white font-semibold'>
-            <Link to="/exchange">
+            {<Link to="/exchange">
                 <button>Exchange</button>
-            </Link>
-            {!props.isLogIn && <Link to="/login">
+            </Link>}
+
+            {/* {!props.isLogIn && <Link to="/login">
                 <button>Login</button>
-            </Link>}
-            {props.isLogIn && <Link to="/signup">
-                <button>Sign up</button>
-            </Link>}
+            </Link>} */}
+
+            {isHome && 
+                <Link to="/login">                    
+                    <button>Login</button>
+                </Link>
+            }
+
+            {isLoginPage &&
+                <Link to="/signup">
+                    <button>Sign up</button>
+                </Link>
+            }
         </div>
     </div>
   )

@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import React, { useState, useEffect, useContext } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 
 const Login = (props) => {
-  useEffect(() => {
-    props.setIsLogIn(true);
-  }, []);
 
+
+  const{setIsLoginPage , setIsHome} = useContext(AppContext);
+
+  useEffect(() => {
+    setIsLoginPage(true);
+    setIsHome(false);
+  },[]);
+
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const changeHandler = (event) => {
@@ -19,16 +28,20 @@ const Login = (props) => {
 
   const formHandler = (event) => {
     event.preventDefault();
-    toast('Logged in');
-    console.log(formData);
+    if(formData.email==="admin@gmail.com" && formData.password==="11112222"){
+      navigate('/exchange');
+      setIsLoginPage(false);
+    }  
   }
 
   return (
     <div className=''>
           <div className='w-[100vw] h-[100vh] flex  flex-col justify-center items-center mx-auto'>
-      <form className='w-[400px] h-[450px] bg-[#27272a] rounded-lg flex flex-col p-16 gap-7 border border-slate-800' onSubmit={formHandler}>
-          <h4 className='text-white text-3xl font-bold text-center'>Sign in</h4>
+          
+      <form className='w-[400px] h-[450px] bg-[#27272a] rounded-lg flex flex-col p-16 gap-5 border border-slate-800' onSubmit={formHandler}>
 
+          <h4 className='text-white text-3xl font-bold text-center'>Sign in</h4>
+          <p className=' text-slate-500 text-sm mx-auto'>Demo:admin@gmail.com,11112222</p>
           <div>
             <input className='bg-[#18181b] w-[100%] p-2 rounded-lg border border-slate-600 text-white' required onChange={Event=>changeHandler(Event)}
              placeholder='Email' name="email" type='email' value={formData.email}></input>
@@ -49,9 +62,14 @@ const Login = (props) => {
               <a className='text-blue-600 text-sm' href=''>Forgot Password</a>
             </div>
           </div>
-          <button type='submit' className='w-[full] h-[40px] bg-white rounded-lg font-semibold'>Login</button>
+          {/* <Link to={formData.email && formData.password ? "/exchange" : ""} className='w-[full] h-[40px] bg-white rounded-lg font-semibold text-center'>
+            <button type='submit' className='mt-2'>Login</button>
+          </Link> */}
+          <button type='submit' className='w-[full] h-[40px] bg-white rounded-lg font-semibold text-center'>Login</button>
 
+            
       </form>
+      
     </div>
     </div>
 

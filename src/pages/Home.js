@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import cardsdata from "../assets/cardsdata"
 import Cards from '../components/Cards'
 import img1 from "../assets/images/img1.avif"
@@ -8,13 +8,15 @@ import img4 from "../assets/images/img4.avif"
 import img5 from "../assets/images/img5.avif"
 import img6 from "../assets/images/img6.avif"
 import { FaArrowRight } from "react-icons/fa";
-import toast, { Toaster } from 'react-hot-toast';
+import { AppContext } from '../context/AppContext'
 
+const Home = () => {
 
-const Home = (props) => {
-  console.log(cardsdata)
-  props.setIsLogIn(false);
-  const notify = () => toast('Thanks for Sub');
+  const {setIsHome } = useContext(AppContext);
+
+  useEffect(()=>{
+    setIsHome(true);
+  })
   return (
 
     <div className='w-[1200px] mx-auto pt-10 max-w-[1800px]'>
@@ -110,7 +112,7 @@ const Home = (props) => {
           <div>
             <div className='flex gap-2'>
               <input type='email' placeholder='Enter your email' className='w-full p-4 rounded-lg -ml-8'></input>
-              <button className='p-1 bg-[#2dd4bf] rounded-lg w-32 text-white hover:bg-[#5eead4] duration-300' onClick={notify}>Notify me</button>
+              <button className='p-1 bg-[#2dd4bf] rounded-lg w-32 text-white hover:bg-[#5eead4] duration-300'>Notify me</button>
             </div>
             <p className='text-slate-300 -ml-8 pt-1'>We hate spam as much as you do.</p>
           </div>

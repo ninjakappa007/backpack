@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Exchange = () => {
+const Exchange = (props) => {
+
   return (
     <div>Exchange</div>
   )
