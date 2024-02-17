@@ -9,10 +9,10 @@ import { CgProfile } from "react-icons/cg";
 
 const ExchangeNavbar = () => {
   return (
+
  <div className='flex justify-between  pt-4 max-w-[1300px] mx-auto'>
 
     {/* left */}
-
       <div className='flex gap-7'>
         <Link to="/" className='flex'>
             <MdBackpack className='bg-red text-3xl text-red-500' />
@@ -28,10 +28,8 @@ const ExchangeNavbar = () => {
         </Link>
       </div>
 
-    
     {/* right */}
     <div className='flex gap-7'>
-
         <Link to="exchange/deposit">
           <button className='bg-[#022c22] p-2 rounded-lg text-sm font-semibold text-[#6ee7b7]'>Deposit</button>
         </Link>
@@ -47,14 +45,9 @@ const ExchangeNavbar = () => {
         <Link to="exchange/profile">
           <button className='text-4xl text-slate-500'><CgProfile /></button>
         </Link> 
-
     </div>
 
-
-
-
-</div>
-  )
+  </div>)
 }
 
 export default ExchangeNavbar
