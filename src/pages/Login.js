@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
 
 const Login = (props) => {
 
-
+  // let location = useLocation();
+  // console.log(location.pathname);
   const{setIsLoginPage , setIsHome} = useContext(AppContext);
 
   useEffect(() => {
@@ -14,6 +15,11 @@ const Login = (props) => {
     setIsHome(false);
   },[]);
 
+  // below is just a look to get current location 
+  // let location = useLocation();
+  // console.log(location.pathname);
+  //*******************
+  // output : /login
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });

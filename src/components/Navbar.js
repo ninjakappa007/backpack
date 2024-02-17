@@ -20,9 +20,6 @@ const {isLoginPage,isHome} = useContext(AppContext);
         
         {/* buttons */}
         <div className='flex gap-8 text-white font-semibold'>
-            {/* {<Link to="/exchange">
-                <button>Exchange</button>
-            </Link>} */}
             
             {isHome && 
                 <Link to="/login">                    

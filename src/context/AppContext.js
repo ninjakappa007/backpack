@@ -12,11 +12,15 @@ export default function AppContextProvider({children}){
     // this variable is to track user is in login page or not
     const [isLoginPage , setIsLoginPage] = useState(false);
 
+    const [isExchange , setIsExchange] = useState(false);
+
     const value = {
         isHome,
         setIsHome,
         isLoginPage,
-        setIsLoginPage
+        setIsLoginPage,
+        isExchange,
+        setIsExchange
     };
 
     return <AppContext.Provider value={value}>
